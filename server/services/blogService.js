@@ -1,6 +1,6 @@
 const Blog = require("../models/blogModel");
 
-const createPost = async body => {
+const blogPost = async body => {
   try {
     const theBlogPost = new Blog(body);
 
@@ -22,7 +22,7 @@ const editBlogPostByID = async (id, fields) =>
 const deleteBlogPostByID = async id => await Blog.findByIdAndDelete(id).exec();
 
 module.exports = {
-  createPost,
+  blogPost,
   getAllBlogPosts,
   getBlogPost,
   editBlogPostByID,
